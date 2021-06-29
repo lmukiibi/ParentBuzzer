@@ -68,14 +68,15 @@ namespace ParentBuzzer.Service
 
             await db.DeleteAsync<User>(ID);
         }
+        */
         
-        public static async Task<IEnumerable<User>> GetProducts()
+        public static async Task<IEnumerable<User>> GetUsers()
         {
             await Init();
 
             var user = await db.Table<User>().ToListAsync();
             return user;
         }
-        */
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ParentBuzzer.View;
+using ParentBuzzer.Service;
 
 namespace ParentBuzzer
 {
@@ -22,9 +23,18 @@ namespace ParentBuzzer
 
         }
 
-        private void Login_Button_Clicked(object sender, EventArgs e)
+        private async void Login_Button_Clicked(object sender, EventArgs e)
         {
-
+            var list = await UserDB.GetUsers();
+            string a = "";
+            foreach (var v in list)
+            {
+                a = v.UserName;
+                break;
+            }
+            await App.Current.MainPage.DisplayAlert("User", a, "OK");
         }
+
+
     }
 }

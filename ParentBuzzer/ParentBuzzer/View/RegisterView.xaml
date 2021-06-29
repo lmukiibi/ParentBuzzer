@@ -4,9 +4,23 @@
              x:Class="ParentBuzzer.View.RegisterView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Skapa konto"
+                   FontSize="30"
+                   HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                x:Name="UserName"
+                Placeholder="Användarnamn"/>
+            <Entry 
+                x:Name="Email"
+                Placeholder="Email"/>
+            <Entry 
+                x:Name="Password"
+                Placeholder="Lösenord"/>
+            <Entry 
+                x:Name="City"
+                Placeholder="Stad"/>
+            <Button Text="Registrera"
+                    Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

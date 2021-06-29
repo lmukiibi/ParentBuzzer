@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using ParentBuzzer.Service;
+using ParentBuzzer.View;
+using ParentBuzzer.Model;
+
 namespace ParentBuzzer.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +19,16 @@ namespace ParentBuzzer.View
         public RegisterView()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
