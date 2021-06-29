@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using ParentBuzzer.View;
 
 namespace ParentBuzzer
 {
@@ -13,6 +14,17 @@ namespace ParentBuzzer
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Register_Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterView());
+
+        }
+
+        private void Login_Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
