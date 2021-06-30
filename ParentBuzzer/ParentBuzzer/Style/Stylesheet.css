@@ -2,21 +2,20 @@
 {
 }
 .headline {
-    color: #c90a63;
-    font-size: 58;
+    color: #914a50;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 75;
-    margin-bottom: 80;
-    text-align: center;
+}
+.headline2 {
+    color: #c90a63;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .button {
-    text-align: center;
-    color: yellow;
-    background-color: #c90a63;
+    color: #fc008b;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 26;
+    border-radius: 10;
     width: 260;
     height: 80;
-    border-radius: 10;
-    margin-bottom: 20;
+}
+.entry {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

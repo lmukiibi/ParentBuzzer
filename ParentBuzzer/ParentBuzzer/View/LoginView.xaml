@@ -3,18 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParentBuzzer.View.LoginView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Inloggning"
-                   FontSize="30"
-                   HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#4c155e">
+            <Label 
+                Text="Inloggning"
+                StyleClass="headline2"
+                TextColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="40"
+                Margin="0, 30, 0, 60"
+                HorizontalTextAlignment="Center" />
             <Entry 
                 x:Name="Email"
-                Placeholder="Email"/>
+                Placeholder="Email"
+                StyleClass="entry" 
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Password"
-                Placeholder="Lösenord"/>
-            <Button Text="Logga in"
-                    Clicked="Button_Clicked"/>
+                Placeholder="Lösenord"
+                StyleClass="entry" 
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
+            <Button 
+                Text="Logga in"
+                Clicked="Button_Clicked"
+                StyleClass="button"
+                BackgroundColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="26"
+                Margin="0,100,0,40"
+                HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

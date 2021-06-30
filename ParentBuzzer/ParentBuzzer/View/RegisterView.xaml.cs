@@ -25,6 +25,7 @@ namespace ParentBuzzer.View
         {
             await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
             await App.Current.MainPage.DisplayAlert("Registrering lyckad!", "Du har nu registrerat ett konto hos oss.", "Start buzzing!");
+            await Navigation.PushAsync(new HomeView());
         }
     }
 }

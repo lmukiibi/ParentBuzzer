@@ -3,24 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParentBuzzer.View.RegisterView">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#4c155e">
             <Label Text="Skapa konto"
-                   FontSize="30"
-                   HorizontalOptions="CenterAndExpand" />
+                   StyleClass="headline2"
+                   TextColor="#ffeccf"
+                   FontAttributes="Bold"
+                   FontSize="40"
+                   Margin="0, 30, 0, 30"
+                   HorizontalTextAlignment="Center" />
             <Entry 
                 x:Name="UserName"
-                Placeholder="Användarnamn"/>
+                Placeholder="Användarnamn"
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Email"
-                Placeholder="Email"/>
+                Placeholder="Email"
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Password"
-                Placeholder="Lösenord"/>
+                Placeholder="Lösenord"
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="City"
-                Placeholder="Stad"/>
-            <Button Text="Registrera"
-                    Clicked="Button_Clicked"/>
+                Placeholder="Stad"
+                TextColor="#ffeccf"
+                FontSize="28"
+                Margin="25, 5, 25, 5" />
+            <Button 
+                Text="Registrera"
+                Clicked="Button_Clicked"
+                StyleClass="button"
+                BackgroundColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="26"
+                Margin="0,46,0,0"
+                HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

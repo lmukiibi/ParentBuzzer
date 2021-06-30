@@ -3,10 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParentBuzzer.View.HomeView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Välkommen till ParentBuzzer!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#4c155e">
+            <Label 
+                Text="Välkommen till ParentBuzzer"
+                StyleClass="headline2"
+                TextColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="46"
+                Margin="0, 40, 0, 60" 
+                HorizontalTextAlignment="Center" />
+            <Label Text="Happy hunting!" 
+               FontSize="22"
+               TextColor="#fc008b"
+               HorizontalTextAlignment="Center"  
+               Margin="30,0,20,60"/>
+            <Button Text="Start Buzzing" 
+                Clicked="Button_Clicked"  
+                StyleClass="button" 
+                BackgroundColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="26"
+                Margin="0,40,0,20"
+                HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

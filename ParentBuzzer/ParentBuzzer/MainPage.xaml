@@ -3,16 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParentBuzzer.MainPage">
 
-    <StackLayout BackgroundColor="Cyan">
-        <Label Text="ParentBuzzer" FontSize="50" HorizontalTextAlignment="Center"  
-               Padding="30,10,30,10" />
+    <StackLayout BackgroundColor="#4c155e">
+        <Label  Text="ParentBuzzer" 
+                StyleClass="headline"
+                TextColor="#ffeccf"
+                FontSize="56"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"  
+                Margin="0,60,0,50" />
+        <Label Text="Skapa kontakt med andra blivande och nyblivna föräldrar nära dig idag!" 
+               FontSize="22"
+               TextColor="#fc008b"
+               HorizontalTextAlignment="Center"  
+               Margin="30,0,20,70"/>
         <Button Text="Logga in" 
                 Clicked="Login_Button_Clicked"
-                HorizontalOptions="Center" BackgroundColor="Red"/>
-        <Button  
-                Clicked="Register_Button_Clicked" Text="Registrera dig" HorizontalOptions="Center"/>
-
-
+                StyleClass="button"
+                BackgroundColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="26"
+                Margin="0,0,0,40"
+                HorizontalOptions="Center" />
+        <Button Text="Registrera dig" 
+                Clicked="Register_Button_Clicked"  
+                StyleClass="button" 
+                BackgroundColor="#ffeccf"
+                FontAttributes="Bold"
+                FontSize="26"
+                Margin="0,0,0,20"
+                HorizontalOptions="Center"/>
     </StackLayout>
-
 </ContentPage>
