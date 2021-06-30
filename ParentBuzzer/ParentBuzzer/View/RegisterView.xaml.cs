@@ -24,11 +24,7 @@ namespace ParentBuzzer.View
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
-        }
-
-        private void Button_Clicked_1(object sender, EventArgs e)
-        {
-
+            await App.Current.MainPage.DisplayAlert("Registrering lyckad!", "Du har nu registrerat ett konto hos oss.", "Start buzzing!");
         }
     }
 }

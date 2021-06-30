@@ -59,7 +59,7 @@ namespace ParentBuzzer.Service
                 City = city
             };
 
-            var id = await db.InsertAsync(user);
+            await db.InsertAsync(user);
         }
         /*
         public static async Task RemoveProduct(int ID)
@@ -77,6 +77,25 @@ namespace ParentBuzzer.Service
             var user = await db.Table<User>().ToListAsync();
             return user;
         }
-        
+        /*
+        public static async Task<User> GetUser(string email, string password)
+        {
+            await Init();
+
+            var user = db.Table<User>().FirstOrDefault(user => user.Name == name && user.Password == password);
+
+            var user = await db.Table<User>().FirstOrDefaultAsync();
+            return user;
+
+
+        }*/
+
+        public static async Task<User> GetUser(string email, string password)
+        {
+            await Init();
+
+            var user = await db.Table<User>().FirstOrDefaultAsync(_ => _.Email == email && _.Password == password); ;
+            return user;
+        }
     }
 }
