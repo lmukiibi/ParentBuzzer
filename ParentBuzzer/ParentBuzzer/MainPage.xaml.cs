@@ -17,24 +17,23 @@ namespace ParentBuzzer
             InitializeComponent();
         }
 
-        private void Register_Button_Clicked(object sender, EventArgs e)
+        private async void Register_Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegisterView());
-
         }
 
         private async void Login_Button_Clicked(object sender, EventArgs e)
         {
-            var list = await UserDB.GetUsers();
+            Navigation.PushAsync(new LoginView());
+            
+            /*var list = await UserDB.GetUsers();
             string a = "";
             foreach (var v in list)
             {
                 a = v.UserName;
                 break;
             }
-            await App.Current.MainPage.DisplayAlert("User", a, "OK");
+            await App.Current.MainPage.DisplayAlert("User", a, "OK");*/
         }
-
-
     }
 }
