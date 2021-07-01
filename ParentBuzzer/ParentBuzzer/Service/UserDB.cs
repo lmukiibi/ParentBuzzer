@@ -23,32 +23,17 @@ namespace ParentBuzzer.Service
 
             db = new SQLiteAsyncConnection(databasePath);
 
-
-            //await db.DeleteAllAsync<Product>();
-
-            await db.CreateTableAsync<User>();
-
+            await db.CreateTableAsync<User>();           
         }
 
-        public static async void ResetTable()
+        public static async void ResetAndAddMochData()
         {
+            await Init();
             await db.DeleteAllAsync<User>();
-        }
-
-        /*
-        public static async void AddMoch()
-        {
-            var moch = await GetProducts();
-
-
-            List<Product> list = (List<Product>)moch;
-            if (list.Count > 0)
-                return;
             await MochData();
         }
-        */
 
-        public static async Task AddUser(string userName, string email, string password, string city)
+        public static async Task<User> AddUser(string userName, string email, string password, string city)
         {
             await Init();
             var user = new User
@@ -60,6 +45,7 @@ namespace ParentBuzzer.Service
             };
 
             await db.InsertAsync(user);
+            return user;
         }
         /*
         public static async Task RemoveProduct(int ID)
@@ -77,18 +63,6 @@ namespace ParentBuzzer.Service
             var user = await db.Table<User>().ToListAsync();
             return user;
         }
-        /*
-        public static async Task<User> GetUser(string email, string password)
-        {
-            await Init();
-
-            var user = db.Table<User>().FirstOrDefault(user => user.Name == name && user.Password == password);
-
-            var user = await db.Table<User>().FirstOrDefaultAsync();
-            return user;
-
-
-        }*/
 
         public static async Task<User> GetUser(string email, string password)
         {
@@ -96,6 +70,37 @@ namespace ParentBuzzer.Service
 
             var user = await db.Table<User>().FirstOrDefaultAsync(_ => _.Email == email && _.Password == password); ;
             return user;
+        }
+
+        private static async Task MochData()
+        {
+            await AddUser("Majsan", "majsan@hotmail.com", "123", "Malmö");
+            await AddUser("Kanelbullen", "lasse@hotmail.com", "123", "Malmö");
+            await AddUser("Carro90", "carro@hotmail.com", "123", "Malmö");
+            await AddUser("Lotta", "lotta@hotmail.com", "123", "Malmö");
+            await AddUser("LisaVisa", "lisavisa@hotmail.com", "321", "Göteborg");
+            await AddUser("Pineapple", "moa@hotmail.com", "321", "Göteborg");
+            await AddUser("Maskrosen", "anna@hotmail.com", "321", "Göteborg");
+            await AddUser("MammaVera", "vera@hotmail.com", "321", "Göteborg");
+        }
+        
+        public static async void ResetTable()
+        {
+            await db.DeleteAllAsync<User>();
+        }
+        
+        public static async void AddMoch()
+        {
+            
+            /*
+            var moch = await GetProducts();
+
+            List<Product> list = (List<Product>)moch;
+            if (list.Count > 0)
+                return;
+            */
+
+            await MochData();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ParentBuzzer
         public MainPage()
         {
             InitializeComponent();
+            UserDB.ResetAndAddMochData();
         }
 
         private void Register_Button_Clicked(object sender, EventArgs e)

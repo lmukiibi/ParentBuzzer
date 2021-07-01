@@ -25,7 +25,7 @@ namespace ParentBuzzer.View
 
             if (user != null)
             {
-                await Navigation.PushAsync(new HomeView());
+                await Navigation.PushAsync(new HomeView(user));
             }
             else
             {

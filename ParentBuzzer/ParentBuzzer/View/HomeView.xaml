@@ -4,27 +4,40 @@
              x:Class="ParentBuzzer.View.HomeView">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#4c155e">
-            <Label 
-                Text="Välkommen till ParentBuzzer"
+            <Grid BackgroundColor="#4c155e" Margin="0,0,0,60">
+                <Label 
+                Text="ParentBuzzer"
                 StyleClass="headline2"
-                TextColor="#ffeccf"
+                TextColor="#ffcea3"
                 FontAttributes="Bold"
-                FontSize="46"
-                Margin="0, 40, 0, 60" 
-                HorizontalTextAlignment="Center" />
-            <Label Text="Happy hunting!" 
-               FontSize="22"
-               TextColor="#fc008b"
+                FontSize="30"
+                Margin="10, 20, 0, 20" 
+                HorizontalTextAlignment="Start" />
+                <Button 
+                Text="Min Profil"
+                StyleClass="profileButton"
+                FontSize="20"
+                TextColor="#ffcea3"
+                BackgroundColor="#ff4fb0"
+                FontAttributes="Bold"
+                Margin="260, 20, 10, 15" />
+            </Grid>
+            <StackLayout>
+               <Label Text="Happy hunting!" 
+               FontSize="26"
+               TextColor="#ff4fb0"
                HorizontalTextAlignment="Center"  
-               Margin="30,0,20,60"/>
+               Margin="30,40,20,60"/>
             <Button Text="Start Buzzing" 
+                TextColor="#ff4fb0"
                 Clicked="Button_Clicked"  
                 StyleClass="button" 
-                BackgroundColor="#ffeccf"
+                BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="26"
                 Margin="0,40,0,20"
                 HorizontalOptions="Center"/>
+        </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

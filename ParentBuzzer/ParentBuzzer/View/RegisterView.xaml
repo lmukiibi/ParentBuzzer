@@ -6,7 +6,7 @@
         <StackLayout BackgroundColor="#4c155e">
             <Label Text="Skapa konto"
                    StyleClass="headline2"
-                   TextColor="#ffeccf"
+                   TextColor="#ffcea3"
                    FontAttributes="Bold"
                    FontSize="40"
                    Margin="0, 30, 0, 30"
@@ -14,32 +14,33 @@
             <Entry 
                 x:Name="UserName"
                 Placeholder="Användarnamn"
-                TextColor="#ffeccf"
+                TextColor="#ffcea3"
                 FontSize="28"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Email"
                 Placeholder="Email"
-                TextColor="#ffeccf"
+                TextColor="#ffcea3"
                 FontSize="28"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Password"
                 Placeholder="Lösenord"
-                TextColor="#ffeccf"
+                TextColor="#ffcea3"
                 FontSize="28"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="City"
                 Placeholder="Stad"
-                TextColor="#ffeccf"
+                TextColor="#ffcea3"
                 FontSize="28"
                 Margin="25, 5, 25, 5" />
             <Button 
                 Text="Registrera"
                 Clicked="Button_Clicked"
                 StyleClass="button"
-                BackgroundColor="#ffeccf"
+                TextColor="#ff4fb0"
+                BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="26"
                 Margin="0,46,0,0"
