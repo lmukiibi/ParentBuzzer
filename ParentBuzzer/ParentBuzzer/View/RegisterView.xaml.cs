@@ -28,7 +28,7 @@ namespace ParentBuzzer.View
                 await App.Current.MainPage.DisplayAlert("Felmeddelande","Du saknar användarnamn", "vänligen fyll i detta.");
             }
 
-            if (Email.Text == null)
+            if (Email.Text == null || !Email.Text.Contains("@"))
             {
                 await App.Current.MainPage.DisplayAlert("Felmeddelande", "Du saknar email", "vänligen fyll i detta.");
 
