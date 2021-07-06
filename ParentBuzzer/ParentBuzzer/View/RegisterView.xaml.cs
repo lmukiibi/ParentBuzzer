@@ -23,8 +23,31 @@ namespace ParentBuzzer.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var user = await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
+            if (UserName.Text == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Felmeddelande","Du saknar användarnamn", "vänligen fyll i detta.");
+            }
+
+            if (Email.Text == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Felmeddelande", "Du saknar email", "vänligen fyll i detta.");
+
+            }
+
+            if (Password.Text == null || Password.Text.Length < 5)
+            {
+                await App.Current.MainPage.DisplayAlert("Lösenord saknas eller", "är kortare än 6 tecken", "vänligen fyll i detta.");
+
+            }
+
+            if(City.Text == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Felmeddelande", "Du saknar stad", "vänligen fyll i detta.");
+            }
+
+            await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
             await App.Current.MainPage.DisplayAlert("Registrering lyckad!", "Du har nu registrerat ett konto hos oss.", "Start buzzing!");
+            var user = await UserDB.GetUser(Email.Text, Password.Text);
             await Navigation.PushAsync(new HomeView(user));
         }
     }
