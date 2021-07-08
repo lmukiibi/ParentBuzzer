@@ -22,25 +22,25 @@
                 x:Name="Email"
                 Placeholder="Email"
                 TextColor="#ffcea3"
-                FontSize="24"
+                FontSize="23"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Password"
                 Placeholder="Lösenord"
                 TextColor="#ffcea3"
-                FontSize="24"
+                FontSize="23"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="City"
                 Placeholder="Stad"
                 TextColor="#ffcea3"
-                FontSize="24"
+                FontSize="23"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Age"
                 Placeholder="Din ålder (ex. 28)"
                 TextColor="#ffcea3"
-                FontSize="24"
+                FontSize="23"
                 Margin="25, 5, 25, 5" />
             <Label Text="Väntar barn" FontSize="24" Margin="25, 5, 25, 5" />
             <CheckBox               
@@ -62,7 +62,7 @@
                 x:Name="Hobbies"
                 Placeholder="Fritidsintresse"
                 TextColor="#ffcea3"
-                FontSize="24"
+                FontSize="23"
                 Margin="25, 5, 25, 5" />
                 <Button 
                 Text="Spara ändringar"
@@ -71,7 +71,7 @@
                 TextColor="#ff4fb0"
                 BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
-                FontSize="26"
+                FontSize="24"
                 Margin="0,50,0,70"
                 HorizontalOptions="Center" />
             </StackLayout>

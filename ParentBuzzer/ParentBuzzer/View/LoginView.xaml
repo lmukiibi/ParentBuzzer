@@ -10,21 +10,21 @@
                 TextColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="40"
-                Margin="0, 30, 0, 60"
+                Margin="0, 30, 0, 40"
                 HorizontalTextAlignment="Center" />
             <Entry 
                 x:Name="Email"
                 Placeholder="Email"
                 StyleClass="entry" 
                 TextColor="#ffcea3"
-                FontSize="28"
+                FontSize="26"
                 Margin="25, 5, 25, 5" />
             <Entry 
                 x:Name="Password"
                 Placeholder="Lösenord"
                 StyleClass="entry" 
                 TextColor="#ffcea3"
-                FontSize="28"
+                FontSize="26"
                 Margin="25, 5, 25, 5" />
             <Button 
                 Text="Logga in"
@@ -34,7 +34,7 @@
                 BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="26"
-                Margin="0,100,0,40"
+                Margin="0,60,0,40"
                 HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>

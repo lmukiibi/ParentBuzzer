@@ -1,38 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ParentBuzzer.MainPage">
-
-    <StackLayout BackgroundColor="#4c155e">
-        <Label  Text="ParentBuzzer" 
+             x:Class="ParentBuzzer.MainPage" BackgroundColor="#4c155e">
+    <ContentPage.Content>
+        <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand" BackgroundColor="#4c155e">
+        <StackLayout BackgroundColor="#4c155e">
+            <Label  Text="ParentBuzzer" 
                 StyleClass="headline"
                 TextColor="#ffcea3"
-                FontSize="56"
+                FontSize="52"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"  
-                Margin="0,60,0,50" />
-        <Label Text="Skapa kontakt med andra blivande och nyblivna föräldrar nära dig idag!" 
-               FontSize="22"
+                Margin="0,20,0,40" />
+            <Label Text="Skapa kontakt med andra blivande och nyblivna föräldrar nära dig idag!" 
+               FontSize="18"
                TextColor="#ff4fb0"
                HorizontalTextAlignment="Center"  
-               Margin="30,0,20,70"/>
-        <Button Text="Logga in" 
+               Margin="30,0,20,60"/>
+            <Button Text="Logga in" 
                 Clicked="Login_Button_Clicked"
                 StyleClass="button"
                 TextColor="#ff4fb0"
                 BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="26"
-                Margin="0,0,0,40"
+                Margin="0,0,0,30"
                 HorizontalOptions="Center" />
-        <Button Text="Registrera dig" 
+            <Button Text="Registrera dig" 
                 Clicked="Register_Button_Clicked"  
                 StyleClass="button" 
                 TextColor="#ff4fb0"
                 BackgroundColor="#ffcea3"
                 FontAttributes="Bold"
                 FontSize="26"
-                Margin="0,0,0,20"
+                Margin="0,0,0,40"
                 HorizontalOptions="Center"/>
-    </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

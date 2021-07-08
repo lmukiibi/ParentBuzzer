@@ -10,18 +10,18 @@
                 StyleClass="headline2"
                 TextColor="#ffcea3"
                 FontAttributes="Bold"
-                FontSize="30"
+                FontSize="28"
                 Margin="10, 20, 0, 20" 
                 HorizontalTextAlignment="Start" />
                 <Button 
                 Text="Min Profil"
                 Clicked="Button_Clicked_Profile" 
                 StyleClass="profileButton"
-                FontSize="20"
+                FontSize="14"
                 TextColor="#ffcea3"
                 BackgroundColor="#ff4fb0"
                 FontAttributes="Bold"
-                Margin="260, 20, 10, 15" />
+                Margin="240, 15, 10, 15" />
             </Grid>
             <StackLayout>
                <Label Text="Happy hunting!" 
