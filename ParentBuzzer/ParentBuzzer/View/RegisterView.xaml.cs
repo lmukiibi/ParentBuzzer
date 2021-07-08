@@ -1,15 +1,9 @@
-﻿using System;
+﻿using ParentBuzzer.Service;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using ParentBuzzer.Service;
-using ParentBuzzer.View;
-using ParentBuzzer.Model;
 
 namespace ParentBuzzer.View
 {
@@ -25,50 +19,62 @@ namespace ParentBuzzer.View
         {
             List<string> errorMessage = new List<string>();
 
+            bool emailExists = await IfEmailExists(Email.Text);
 
-            if (UserName.Text == null)
+            if (string.IsNullOrEmpty(UserName.Text))
             {
-                errorMessage.Add("Felmeddelande. Du saknar användarnamn, vänligen fyll i detta.");
-                //await App.Current.MainPage.DisplayAlert("Felmeddelande","Du saknar användarnamn", "vänligen fyll i detta.");
+                errorMessage.Add("Du saknar användarnamn, vänligen fyll i detta.");
             }
 
-            if (Email.Text == null || !Email.Text.Contains("@"))
+            if (string.IsNullOrEmpty(Email.Text) || !Email.Text.Contains("@"))
             {
-                errorMessage.Add("Felmeddelande. Du saknar email, vänligen fyll i detta.");
-
-                //await App.Current.MainPage.DisplayAlert("Felmeddelande", "Du saknar email", "vänligen fyll i detta.");
-
+                errorMessage.Add("Du saknar email, vänligen fyll i detta.");
             }
 
-            if (Password.Text == null || Password.Text.Length < 5)
+            if (string.IsNullOrEmpty(Password.Text) || Password.Text.Length < 6)
             {
-                errorMessage.Add("Felmeddelande. Lösenord saknas eller är kortare än 6 tecken, vänligen fyll i detta.");
-
-                //await App.Current.MainPage.DisplayAlert("Lösenord saknas eller", "är kortare än 6 tecken", "vänligen fyll i detta.");
-
+                errorMessage.Add("Lösenord saknas eller är kortare än 6 tecken, vänligen fyll i detta.");
             }
 
-            if (City.Text == null)
+            if (string.IsNullOrEmpty(City.Text))
             {
-                errorMessage.Add("Felmeddelande. Du saknar stad, vänligen fyll i detta.");
-
-                //await App.Current.MainPage.DisplayAlert("Felmeddelande", "Du saknar stad", "vänligen fyll i detta.");
+                errorMessage.Add("Du saknar stad, vänligen fyll i detta.");
             }
 
             if (errorMessage.Count > 0)
             {
-                //skriv ut lista med error
+                var messages = String.Join(" \n", errorMessage);
+                await App.Current.MainPage.DisplayAlert("Felmeddelande", messages, "Ok");
             }
             else
             {
-                await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text);
-                await App.Current.MainPage.DisplayAlert("Registrering lyckad!", "Du har nu registrerat ett konto hos oss.", "Start buzzing!");
-                var user = await UserDB.GetUser(Email.Text, Password.Text);
-                await Navigation.PushAsync(new HomeView(user));
-
+                if (emailExists)
+                {
+                    await App.Current.MainPage.DisplayAlert("Registrering misslyckad!", "Användaren existerar redan", "Försök igen");
+                }
+                else
+                {
+                    await UserDB.AddUser(UserName.Text, Email.Text, Password.Text, City.Text, 0, false, false, DateTime.Now, "");
+                    await App.Current.MainPage.DisplayAlert("Registrering lyckad!", "Du har nu registrerat ett konto hos oss.", "Start buzzing!");
+                    var user = await UserDB.GetUser(Email.Text, Password.Text);
+                    await Navigation.PushAsync(new HomeView(user));
+                }
             }
+        }
 
-
+        /// <summary>
+        /// Checks if an email exists in the UserDB. Returns false if you are enable to register.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>bool</returns>
+        public static async Task<bool> IfEmailExists(string email)
+        {
+            bool exists = await UserDB.IfEmailExists(email);
+            if (exists)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
