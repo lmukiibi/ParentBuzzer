@@ -15,6 +15,7 @@
                 HorizontalTextAlignment="Start" />
                 <Button 
                 Text="Min Profil"
+                Clicked="Button_Clicked_Profile" 
                 StyleClass="profileButton"
                 FontSize="20"
                 TextColor="#ffcea3"
@@ -28,9 +29,9 @@
                TextColor="#ff4fb0"
                HorizontalTextAlignment="Center"  
                Margin="30,40,20,60"/>
-            <Button Text="Start Buzzing" 
-                TextColor="#ff4fb0"
-                Clicked="Button_Clicked"  
+            <Button Text="Start Buzzing"
+                Clicked="Button_Clicked_Search" 
+                TextColor="#ff4fb0"                
                 StyleClass="button" 
                 BackgroundColor="#ffcea3"
                 FontAttributes="Bold"

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParentBuzzer.View.SearchView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#4c155e">
+            <StackLayout>
+                <Label Text="Parents near you!"
+                   StyleClass="headline2"
+                   TextColor="#ffcea3"
+                   FontAttributes="Bold"
+                   FontSize="40"
+                   Margin="0, 30, 0, 20"
+                   HorizontalTextAlignment="Center" />
+            </StackLayout>
+            <BoxView HeightRequest="1" Color="#ff4fb0" IsVisible="True"/>
+            <Label
+               x:Name="City"
+               FontSize="26"
+               TextColor="#ffcea3" 
+               Margin="30, 10, 10, 10" />
+                <BoxView HeightRequest="1" Color="#ff4fb0" IsVisible="True"/>
+            <StackLayout Margin="0, 20, 0, 0" >
+                <ListView x:Name="searchView" ItemsSource="{Binding Users}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Label Text="{Binding UserName}"  FontAttributes="Bold" FontSize="24" TextColor="#ffcea3" Padding="30,5,0,5"/>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

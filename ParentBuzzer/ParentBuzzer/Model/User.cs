@@ -13,5 +13,11 @@ namespace ParentBuzzer.Model
         public string Email { get; set; }
         public string Password { get; set; }
         public string City { get; set; }
+
+        public int Age { get; set; }
+        public bool ExpectingChild { get; set; }
+        public bool HasChild { get; set; }
+        public DateTime ChildsBirth { get; set; }
+        public string Hobbies { get; set; }
     }
 }
